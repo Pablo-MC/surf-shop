@@ -6,26 +6,31 @@ import Register from './components/auth/Register';
 
 import Navbar from './components/layout/Navbar';
 import Carousel from './components/layout/Carousel';
+import ProductsList from './components/products/ProductsList';
+import About from './components/layout/About';
+import Footer from './components/layout/Footer';
+
+import Cart from './components/cart/Cart';
+
 import Default from './components/layout/Default';
 
-import Products from './components/products/Products';
 
 
-function App() {
+function App () {
    return (
       <>
          <Router>
             <Navbar />
             <Carousel />
             <Switch>
-               <Route exact path="/" component={Products} />
+               <Route exact path="/" component={ProductsList} />
                <Route exact path="/login" component={Login} />
                <Route exact path="/register" component={Register} />
+               {/* <Route exact path="/cart" component={Cart} /> */}
                <Route component={Default} />
-               {/* <Route exact path="/about" component={About} />
-               <Route exact path="/cart" component={Cart} />
-               <Route exact path="/search" component={Search} /> */}
             </Switch>
+            <About />
+            <Footer />   
          </Router> 
       </>     
    );

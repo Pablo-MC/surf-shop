@@ -5,8 +5,8 @@ import { storeProducts } from '../../db/data';
 import Title from './../layout/Title';
 import Product from './Product';
 
-const Products = () => {
-   
+
+const ProductsList = () => {
    return (
       <div className="container py-5 text-center">
          <Title name={'Products'} />
@@ -62,5 +62,5 @@ const Products = () => {
    );
 }
 
-export default Products;
+export default ProductsList;
 

@@ -1,26 +1,44 @@
-// import React, { useReducer } from 'react';
+import React, { useReducer } from 'react';
 
-// import { TYPE } from '../../types';
-
-// // Importar Context y Reducer
+import { storeProducts } from '../../db/data';
 
 
-// const = (props) => {
+// Importar Context y Reducer
+import productContext from './productsContext';
+import productReducer from './productsReducer';
 
-//    const initialState = {
-
-//    }
-
-
-//    // Creacion del state y el dispatch (useReducer)
+// import { EJEMPLO } from '../../types';
 
 
-//    // Funciones
 
 
-//    return (
-      
-//    );
-// }
 
-// export default ;
+// ProyectState va a ser el State inicial de toda la administración de los productos.
+const ProductState = (props) => {
+
+   const initialState = {
+      products: storeProducts 
+
+   }
+
+
+   // Creacion del state y el dispatch (useReducer)
+   const [state, dispatch] = useReducer(productReducer, initialState);
+
+
+   // Funciones
+
+
+   return (
+      <productContext.Provider
+         value={{
+
+
+         }}
+      >
+         {props.children}
+      </productContext.Provider>
+   );
+}
+
+export default ProductState;

@@ -13,6 +13,7 @@ const Product = ({product}) => {
                <p className="lead">{title}</p>
                <p className="lead">$ {price}</p>
                <a href="/"> <img src={img} className="w-100" alt="Photo"/> </a>
+               <button className="btn btn-outline-info mt-4">Add Cart <i className="fa fa-shopping-cart ml-2"></i></button>
             </div>
          </div>
       </>

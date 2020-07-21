@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -16,7 +16,7 @@ const Navbar = () => {
                   {/* <Link to={'/about'} className="nav-item nav-link px-4" style={{ textDecoration: 'none' }}> 
                      About
                   </Link> */}
-                  <a className="nav-item nav-link px-4" href="/about">About</a>
+                  <a className="nav-item nav-link px-4" href="#about">About</a>
                   <div className="dropdown">
                      <a className="nav-item nav-link dropdown-toggle px-4" href="!#" id="dropdownMenuLink" data-toggle="dropdown">Shop</a>
                      <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -29,7 +29,12 @@ const Navbar = () => {
                   <a className="nav-item nav-link px-4" href="/contact">Contact</a>
                   <a className="nav-item nav-link px-4" href="!#"><i className="fa fa-search text-dark"></i></a>
                </div>
-               <a className="btn btn-outline-info text-uppercase" href="/cart">My Cart <i className="fa fa-cart-arrow-down ml-2"></i></a>
+               
+               <Link to={'/cart'} className="btn btn-outline-info text-uppercase"> 
+                  My Cart <i className="fa fa-cart-arrow-down ml-2"></i>
+               </Link>
+
+               {/* <a className="btn btn-outline-info text-uppercase" href="/cart">My Cart <i className="fa fa-cart-arrow-down ml-2"></i></a> */}
             </div>
          </nav>
       </div>
