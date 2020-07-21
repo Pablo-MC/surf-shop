@@ -5,27 +5,27 @@ const Carousel = () => {
    return (
       <div className="container">
          <div id="carouselExampleControls" className="carousel slide mt-1" data-ride="carousel">
-            <div className="carousel-inner">
+            <div className="carousel-inner shadow-lg rounded">
                <div className="carousel-item active">
-                  <img src="images/carousel-1.jpg" className="d-block w-100" alt="Photo-1"/>
+                  <img src="images/carousel_1.jpg" className="d-block w-100" alt="Photo-1"/>
                   <div className="carousel-caption d-none d-lg-block">
-                     <h5 className="display-1">First slide label</h5>
+                     {/* <h5 className="display-1">First slide label</h5> */}
                      <p className="lead mb-4">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                      <button className="btn btn-outline-light btn-lg text-uppercase mb-5">Shop Now <i className="fa fa-cart-arrow-down ml-2"></i></button>
                   </div>
                </div>
                <div className="carousel-item">
-                  <img src="images/carousel-1.jpg" className="d-block w-100" alt="Photo-2"/>
+                  <img src="images/carousel_2.jpg" className="d-block w-100" alt="Photo-2"/>
                   <div className="carousel-caption d-none d-lg-block">
-                     <h5 className="display-1">First slide label</h5>
+                     {/* <h5 className="display-1">First slide label</h5> */}
                      <p className="lead mb-4">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                      <button className="btn btn-outline-light btn-lg text-uppercase mb-5">Shop Now <i className="fa fa-cart-arrow-down ml-2"></i></button>
                   </div>
                </div>
                <div className="carousel-item">
-                  <img src="images/carousel-1.jpg" className="d-block w-100" alt="Photo-3"/>
+                  <img src="images/carousel_3.jpg" className="d-block w-100" alt="Photo-3"/>
                   <div className="carousel-caption d-none d-lg-block">
-                     <h5 className="display-1">First slide label</h5>
+                     {/* <h5 className="display-1">First slide label</h5> */}
                      <p className="lead mb-4">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                      <button className="btn btn-outline-light btn-lg text-uppercase mb-5">Shop Now <i className="fa fa-cart-arrow-down ml-2"></i></button>
                   </div>
