@@ -1,5 +1,8 @@
-// Context Product
-export const EJEMPLO = 'EJEMPLO';
+// Context Shop
+export const ADD_PRODUCT = 'ADD_PRODUCT';
+export const DELETE_PRODUCT = 'DELETE_PRODUCT';
+
+
 
 
 

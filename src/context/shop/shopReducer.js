@@ -1,16 +1,25 @@
 import {
-   EJEMPLO
+   ADD_PRODUCT,
+   DELETE_PRODUCT
 } from '../../types';
 
 
 export default (state, action) => {
    switch (action.type) {
 
-      case EJEMPLO:
+      case ADD_PRODUCT:
          return {
             ...state,
-
+            productsCart: [...state.productsCart, action.payload]
          }
+
+      case DELETE_PRODUCT:
+         return {
+            ...state,
+            productsCart: state.productsCart.filter(product => product.id !== action.payload)
+         }
+
+      
 
       default:
          return state;

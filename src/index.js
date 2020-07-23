@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import { BrowserRouter, Route } from 'react-router-dom';
-
 import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -11,8 +9,8 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Bootstrap JS, jQuery, Popper.js
-import $ from 'jquery';
-import Popper from 'popper.js';
+// import Popper from 'popper.js';
+// import $ from 'jquery';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 // Font-awesome

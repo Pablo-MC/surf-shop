@@ -1,8 +1,8 @@
 import { createContext } from 'react';
 
 
-const productContext = createContext();
+const shopContext = createContext();
 
-export default productContext;
+export default shopContext;
 
 // El Context nos permite importar los states y las funciones a los demas componentes
