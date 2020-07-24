@@ -28,9 +28,5 @@ export default (state, action) => {
 
 // El Reducer cambia los States de los componentes. 
 
-
-
-
-
-// OBS 1: SIEMPRE se debe hacer una copia del State incial (...state) para que se haga una copia y se agrege el resto.
+// OBS 1: Para cada acción, SIEMPRE se debe hacer una copia del State incial (...state) y luego agregar el resto.
 // OBS 2: action.payload --> payload contiene valor que se le asigna a la propiedad payload en la fn del dispatch.

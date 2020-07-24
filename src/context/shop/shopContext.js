@@ -5,4 +5,4 @@ const shopContext = createContext();
 
 export default shopContext;
 
-// El Context nos permite importar los states y las funciones a los demas componentes
+// createContext permite importar los states y las funciones a los demas componentes.

@@ -10,7 +10,6 @@ import Default from './components/pages/Default';
 import ShopState from './context/shop/ShopState';
 
 
-
 function App () {
    return (
       <>

@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
 import NavCart from '../layout/NavCart';
+import CartList from '../layout/CartList';
 
 import shopContext from '../../context/shop/shopContext';
-
-import CartList from '../layout/CartList';
 
 
 const Cart = () => {

@@ -14,14 +14,13 @@ import {
 } from '../../types';
 
 
-// ProyectState va a ser el State inicial de toda la administración del Shop.
+// ShopState es el State inicial de toda la administración del Shop.
 const ShopState = (props) => {
 
    const initialState = {
       products: storeProducts,
       productsCart: []
       
-
    }
 
 
@@ -31,7 +30,7 @@ const ShopState = (props) => {
 
    // Funciones
 
-   // cuando se llame a dicha funcion se va a ejecutar el type AGREGAR_PRODUCTO.
+   // Al llamar a la funcion se ejecuta el type ADD_PRODUCT.
    const addProduct = (product) => {  
       dispatch({
          type: ADD_PRODUCT,
@@ -46,10 +45,6 @@ const ShopState = (props) => {
          payload: productId
       })
    }
-
-
-
-
 
 
    return (
