@@ -10,13 +10,15 @@ export default (state, action) => {
       case ADD_PRODUCT:
          return {
             ...state,
-            productsCart: [...state.productsCart, action.payload]
+            productsCart: [...state.productsCart, action.payload],
+            totalPrice: state.totalPrice + action.payload.price  // Suma total de los productos. 
          }
 
       case DELETE_PRODUCT:
          return {
             ...state,
-            productsCart: state.productsCart.filter(product => product.id !== action.payload)
+            productsCart: state.productsCart.filter(product => product.id !== action.payload),
+            totalPrice: (state.totalPrice - (state.productsCart.find(product => product.id === action.payload).price)).toFixed(2) // Dos decimales.
          }
 
       

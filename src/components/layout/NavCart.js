@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const NavCart = () => {
    return (
       <div className="container">
-         <h2 className="display-4 text-center text-uppercase font-weight-bold border-bottom mx-auto w-75 py-2">Surf Shop</h2>
+         <h2 className="display-4 text-center text-uppercase font-weight-bold border-bottom mx-auto w-75 py-2">My Cart</h2>
          <nav className="navbar navbar-expand-lg navbar-light">
             <button className="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                <span className="navbar-toggler-icon"></span>

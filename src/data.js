@@ -4,13 +4,13 @@ export const storeProducts = [
       id: 1,
       title: "Futures Alpha Freestone",
       img: "images/fins_1.jpg",
-      price: 110.00,
+      price: 110.99,
       category: "fins",
       info:
          "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle.",
       inCart: false,
       count: 0,
-      total: 0
+      total: 10
    },
    {
       id: 2,
@@ -22,43 +22,43 @@ export const storeProducts = [
          "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle.",
       inCart: false,
       count: 0,
-      total: 0
+      total: 10
    },
    {
       id: 3,
       title: "FCS Carver Accelerator",
       img: "images/fins_3.jpg",
-      price: 84.15 ,
+      price: 84.99 ,
       category: "fins",
       info:
          "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle.",
       inCart: false,
       count: 0,
-      total: 0
+      total: 10
    },
    {
       id: 4,
       title: "TBLS Pro Ton 5'10''",
       img: "images/boards_1.jpg",
-      price: 389.00,
+      price: 389.99,
       category: "boards",
       info:
          "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle.",
       inCart: false,
       count: 0,
-      total: 0
+      total: 10
    },
    {
       id: 5,
       title: "Torq Shapes 5'8''",
       img: "images/boards_2.jpg",
-      price: 589.00,
+      price: 589.99,
       category: "boards",
       info:
          "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle.",
       inCart: false,
       count: 0,
-      total: 0
+      total: 10
    },
    {
       id: 6,
@@ -70,31 +70,31 @@ export const storeProducts = [
          "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle.",
       inCart: false,
       count: 0,
-      total: 0
+      total: 10
    },
    {
       id: 7,
       title: "Oneill Reactor II",
       img: "images/neoprene_1.jpg",
-      price: 99.95,
+      price: 99.99,
       category: "neoprene",
       info:
          "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle.",
       inCart: false,
       count: 0,
-      total: 0
+      total: 10
    },
    {
       id: 8,
       title: "Vissla Bewet Chiba",
       img: "images/neoprene_2.jpg",
-      price: 350.55,
+      price: 350.99,
       category: "neoprene",
       info:
          "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle.",
       inCart: false,
       count: 0,
-      total: 0
+      total: 10
    },
    {
       id: 9,
@@ -106,43 +106,43 @@ export const storeProducts = [
          "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle.",
       inCart: false,
       count: 0,
-      total: 0
+      total: 10
    },
    {
       id: 10,
       title: "Leash Ocean Earth",
       img: "images/accesories_1.jpg",
-      price: 59,
+      price: 59.99,
       category: "accesories",
       info:
          "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle.",
       inCart: false,
       count: 0,
-      total: 0
+      total: 10
    },
    {
       id: 11,
       title: "Creatures Grip Split",
       img: "images/accesories_2.jpg",
-      price: 44,
+      price: 44.99,
       category: "accesories",
       info:
          "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle.",
       inCart: false,
       count: 0,
-      total: 0
+      total: 10
    },
    {
       id: 12,
       title: "Comb Smashed",
       img: "images/accesories_3.jpg",
-      price: 5,
+      price: 5.99,
       category: "accesories",
       info:
          "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle.",
       inCart: false,
       count: 0,
-      total: 0
+      total: 10
    }
 ];
 
@@ -151,7 +151,7 @@ export const detailProduct = {
    id: 1,
    title: "Google Pixel - Black",
    img: "images/product-1.png",
-   price: 10,
+   price: 10.99,
    category: "google",
    info:
       "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",

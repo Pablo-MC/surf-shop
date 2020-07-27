@@ -19,8 +19,8 @@ const ShopState = (props) => {
 
    const initialState = {
       products: storeProducts,
-      productsCart: []
-      
+      productsCart: [],
+      totalPrice: 0     
    }
 
 
@@ -52,6 +52,7 @@ const ShopState = (props) => {
          value={{
             products: state.products,
             productsCart: state.productsCart,
+            totalPrice: state.totalPrice,
             addProduct,
             deleteProduct
 

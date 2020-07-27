@@ -25,7 +25,7 @@ const Navbar = () => {
             <button className="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse style-navbar" id="navbarNavAltMarkup">
+            <div className="collapse navbar-collapse style-navbar mb-2" id="navbarNavAltMarkup">
                <div className="navbar-nav text-uppercase m-auto lead py-0">
                   <Link to={'/'} className="nav-item nav-link text-danger px-4">Home</Link>           
                   <a className="nav-item nav-link px-4" href="#about">About</a>  
