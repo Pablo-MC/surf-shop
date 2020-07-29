@@ -1,8 +1,8 @@
 // Context Shop
 export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const DELETE_PRODUCT = 'DELETE_PRODUCT';
-// export const TOTAL_PRICE = 'TOTAL_PRICE';
-
+export const INCREASE_QUANTITY = 'INCREASE_QUANTITY';
+export const DECREASE_QUANTITY = 'DECREASE_QUANTITY';
 
 
 

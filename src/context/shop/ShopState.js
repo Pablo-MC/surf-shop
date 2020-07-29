@@ -10,7 +10,9 @@ import shopReducer from './shopReducer';
 
 import { 
    ADD_PRODUCT,
-   DELETE_PRODUCT
+   DELETE_PRODUCT,
+   INCREASE_QUANTITY,
+   DECREASE_QUANTITY
 } from '../../types';
 
 
@@ -20,7 +22,7 @@ const ShopState = (props) => {
    const initialState = {
       products: storeProducts,
       productsCart: [],
-      totalPrice: 0     
+      totalPrice: 0   
    }
 
 
@@ -28,9 +30,9 @@ const ShopState = (props) => {
    const [state, dispatch] = useReducer(shopReducer, initialState);
 
 
+   
    // Funciones
 
-   // Al llamar a la funcion se ejecuta el type ADD_PRODUCT.
    const addProduct = (product) => {  
       dispatch({
          type: ADD_PRODUCT,
@@ -47,6 +49,23 @@ const ShopState = (props) => {
    }
 
 
+   const increaseQuantity = (productId) => {
+      dispatch({
+         type: INCREASE_QUANTITY,
+         payload: productId
+      })
+   }
+
+
+   const decreaseQuantity = (productId) => {
+      dispatch({
+         type: DECREASE_QUANTITY,
+         payload: productId
+      })
+   } 
+
+
+
    return (
       <shopContext.Provider
          value={{
@@ -54,7 +73,9 @@ const ShopState = (props) => {
             productsCart: state.productsCart,
             totalPrice: state.totalPrice,
             addProduct,
-            deleteProduct
+            deleteProduct,
+            increaseQuantity,
+            decreaseQuantity
 
 
          }}

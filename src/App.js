@@ -5,6 +5,8 @@ import Login from './components/pages/Login';
 import Register from './components/pages/Register';
 import Home from './components/pages/Home';
 import Cart from './components/pages/Cart';
+import Contact from './components/pages/Contact';
+
 import Default from './components/pages/Default';
 
 import ShopState from './context/shop/ShopState';
@@ -20,6 +22,7 @@ function App () {
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/cart" component={Cart} />
+                  <Route exact path="/contact" component={Contact} />
                   <Route component={Default} />
                </Switch>  
             </Router>

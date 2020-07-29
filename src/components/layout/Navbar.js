@@ -34,17 +34,17 @@ const Navbar = () => {
                      <a className="nav-item nav-link dropdown-toggle px-4" href="!#" id="dropdownMenuLink" data-toggle="dropdown">Shop</a>
                      <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <a className="dropdown-item" href="#fins">Fins</a>
-                        <a className="dropdown-item" href="#boards">Boards <i className="fa fa-pagelines ml-2"></i></a>
-                        <a className="dropdown-item" href="#neopreme">Neoprenes <i className="fa fa-envira ml-2"></i></a>
+                        <a className="dropdown-item" href="#boards">Boards</a>
+                        <a className="dropdown-item" href="#neopreme">Neoprenes</a>
                         <a className="dropdown-item" href="#accesories">Accesories <i className="fa fa-cubes ml-2"></i></a>
                      </div>
                   </div>
                   {/* End Dropdown Button */}
-                  <a className="nav-item nav-link px-4" href="#footer">Contact</a>
+                  <Link to={'/contact'} className="nav-item nav-link px-4">Contact</Link>           
                   <a className="nav-item nav-link px-4" href="!#"><i className="fa fa-search text-dark"></i></a>
                </div>
                
-               <Link to={'/cart'} className="btn btn-outline-info text-uppercase">My Cart <i className="fa fa-cart-arrow-down ml-2"></i></Link>
+               <Link to={'/cart'} className="btn btn-outline-info text-uppercase">My Cart<i className="fa fa-cart-arrow-down ml-2"></i></Link>
 
             </div>
          </nav>

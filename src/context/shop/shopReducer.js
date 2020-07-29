@@ -1,6 +1,8 @@
 import {
    ADD_PRODUCT,
-   DELETE_PRODUCT
+   DELETE_PRODUCT,
+   INCREASE_QUANTITY,
+   DECREASE_QUANTITY
 } from '../../types';
 
 
@@ -18,8 +20,25 @@ export default (state, action) => {
          return {
             ...state,
             productsCart: state.productsCart.filter(product => product.id !== action.payload),
-            totalPrice: (state.totalPrice - (state.productsCart.find(product => product.id === action.payload).price)).toFixed(2) // Dos decimales.
+            
+            totalPrice: parseFloat(state.totalPrice - (state.productsCart.find(product => product.id === action.payload).price))
          }
+
+      // case INCREASE_QUANTITY:
+      //    return {
+      //       ...state,
+      //       productsCart: 
+            // productsCart: state.productsCart.find(product => product.id === action.payload).count = state.quantity 
+            // state.productsCart.find(product => product.id === action.payload).count++,
+            // totalPrice: parseFloat(state.totalPrice + (state.productsCart.find(product => product.id === action.payload).price))
+
+         // }
+
+      // case DECREASE_QUANTITY:
+      //    return {
+      //       ...state,
+      //       productsCart: 
+      //    }   
 
       
 

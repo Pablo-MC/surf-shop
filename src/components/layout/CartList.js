@@ -1,58 +1,41 @@
 import React, { useContext } from 'react';
-import $ from 'jquery';
+// import $ from 'jquery';
 
 
 import shopContext from '../../context/shop/shopContext';
-
 
 
 const CartList = ({product}) =>  {
    
 
    const ShopContext = useContext(shopContext);
-   const { deleteProduct } = ShopContext;
+   const { deleteProduct, increaseQuantity, decreaseQuantity } = ShopContext;
 
 
-   const { title, img, price, total } = product;
+   const { id, title, img, price, total, quantity } = product;
    
 
 
 
-   $(document).ready(function () {
+   // $(document).ready(function () {
 
-      $('.quantity-minus').click(function (e) {
-         var quantity = parseInt($('#quantity').val());
+   //    $('.quantity-minus').click(function (e) {
+   //       // e.preventDefault();
+   //       // var value = parseInt($('#quantity').val());
 
-         if (quantity > 1)
-            $('#quantity').val(quantity - 1);
-      });
+   //       // if (value > 1)
+   //          $('#quantity').val(quantity);
+   //    });
 
-      $('.quantity-plus').click(function (e) {
-         var quantity = parseInt($('#quantity').val());
+   //    $('.quantity-plus').click(function (e) {
+   //       // e.preventDefault();
+   //       // var value = parseInt($('#quantity').val());
 
-         if (quantity < total)
-            $('#quantity').val(quantity + 1);
-      });
+   //       // if (value < total)
+   //          $('#quantity').val(quantity);
+   //    });
 
-   });
-
-
-
-   // const increaseValue = () => {
-   //    var value = parseInt(document.getElementById('number').value, 10);
-   //    value = isNaN(value) ? 0 : value;
-   //    value++;
-   //    document.getElementById('number').value = value;
-   // }
-
-   // function decreaseValue() {
-   //    var value = parseInt(document.getElementById('number').value, 10);
-   //    value = isNaN(value) ? 0 : value;
-   //    // value < 1 ? value = 1 : '';
-   //    value--;
-   //    document.getElementById('number').value = value;
-   // }
-
+   // });
 
 
 
@@ -68,30 +51,38 @@ const CartList = ({product}) =>  {
                <p>$ {price}</p>   
             </div>
          
+
             <div className="col-2">         
                <div className="input-group">
                   <span className="input-group-btn">
-                     <button className="quantity-minus btn btn-danger btn-sm" type="button" data-type="minus" data-field="">
+                     <button className="btn btn-danger btn-sm quantity-minus" onClick={() => decreaseQuantity(id)}>
                         <i className="fa fa-minus"></i> 
                      </button>
                   </span>                  
                   
-                  <input className="form-control form-control-sm input-number text-center" type="text" id="quantity" name="quantity" value="1" />                  
-                  
+                  <input 
+                     className="form-control form-control-sm text-center" 
+                     type="text" 
+                     // id={quantity} 
+                     // name={quantity}
+                     defaultValue={quantity}
+                  />
+
                   <span className="input-group-btn">
-                     <button className="quantity-plus btn btn-success btn-sm" type="button" data-type="plus" data-field="">
-                        <i className="fa fa-plus" aria-hidden="true"></i>
+                     <button className="btn btn-success btn-sm quantity-plus" onClick={() => increaseQuantity(id)}>
+                        <i className="fa fa-plus"></i>
                      </button>
                   </span>
                </div>
             </div>               
+            
 
             <div className="col-2">
-               <p className="text-center">$ total</p>
+               <p className="text-center">$ {total}</p>
             </div>
 
             <div className="col-2">
-               <button className="btn btn-primary btn-sm" onClick={() => deleteProduct(product.id)}><i className="fa fa-trash"></i></button>
+               <button className="btn btn-primary btn-sm" onClick={() => deleteProduct(id)}><i className="fa fa-trash"></i></button>
             </div>
       
          </div>
