@@ -3,7 +3,7 @@ import React, { useReducer } from 'react';
 import { storeProducts } from '../../data';
 
 
-// Importar Context y Reducer
+// Importo Context y Reducer
 import shopContext from './shopContext';
 import shopReducer from './shopReducer';
 
@@ -33,36 +33,59 @@ const ShopState = (props) => {
    
    // Funciones
 
-   const addProduct = (product) => {  
+   const addProduct = (product) => { 
+      
+      // Para no duplicar el producto en la lista, agrego el producto unicamente si no está en el carrito.
+      if (!product.inCart) {
+         
+         product.inCart = true;
+         
+         dispatch({
+            type: ADD_PRODUCT,
+            payload: product
+         })   
+      } 
+
+   }               
+   
+
+   const deleteProduct = (product) => {
+
+      product.inCart = false; 
+
       dispatch({
-         type: ADD_PRODUCT,
+         type: DELETE_PRODUCT,
          payload: product
       })
    }
 
 
-   const deleteProduct = (productId) => {
-      dispatch({
-         type: DELETE_PRODUCT,
-         payload: productId
-      })
-   }
+   const decreaseQuantity = (product) => {
 
+      if (product.quantity > 1) {
+         product.quantity--;
+         product.total = product.price * product.quantity;
 
-   const increaseQuantity = (productId) => {
-      dispatch({
-         type: INCREASE_QUANTITY,
-         payload: productId
-      })
-   }
-
-
-   const decreaseQuantity = (productId) => {
-      dispatch({
-         type: DECREASE_QUANTITY,
-         payload: productId
-      })
+         dispatch({
+            type: DECREASE_QUANTITY,
+            payload: product
+         })
+      }
    } 
+
+
+   const increaseQuantity = (product) => {
+
+      if (product.quantity < 10) {
+         product.quantity++;
+         product.total = product.price * product.quantity;
+
+         dispatch({
+            type: INCREASE_QUANTITY,
+            payload: product
+         })
+      }
+   }
 
 
 

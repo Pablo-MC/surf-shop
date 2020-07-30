@@ -13,34 +13,34 @@ export default (state, action) => {
          return {
             ...state,
             productsCart: [...state.productsCart, action.payload],
-            totalPrice: state.totalPrice + action.payload.price  // Suma total de los productos. 
+            totalPrice: state.totalPrice + action.payload.price 
          }
 
       case DELETE_PRODUCT:
          return {
             ...state,
-            productsCart: state.productsCart.filter(product => product.id !== action.payload),
+            productsCart: state.productsCart.filter(product => product.id !== action.payload.id),
             
-            totalPrice: parseFloat(state.totalPrice - (state.productsCart.find(product => product.id === action.payload).price))
+            totalPrice: parseFloat(state.totalPrice - (state.productsCart.find(product => product.id === action.payload.id).total))
          }
 
-      // case INCREASE_QUANTITY:
-      //    return {
-      //       ...state,
-      //       productsCart: 
-            // productsCart: state.productsCart.find(product => product.id === action.payload).count = state.quantity 
-            // state.productsCart.find(product => product.id === action.payload).count++,
-            // totalPrice: parseFloat(state.totalPrice + (state.productsCart.find(product => product.id === action.payload).price))
+      case DECREASE_QUANTITY:
+         return {
+            ...state,
+            productsCart: state.productsCart.map(product => product.id === action.payload.id ? action.payload : product),
 
-         // }
+            totalPrice: parseFloat(state.totalPrice - (state.productsCart.find(product => product.id === action.payload.id).price))
 
-      // case DECREASE_QUANTITY:
-      //    return {
-      //       ...state,
-      //       productsCart: 
-      //    }   
+         }   
 
-      
+      case INCREASE_QUANTITY:
+         return {
+            ...state,
+            productsCart: state.productsCart.map(product => product.id === action.payload.id ? action.payload : product),
+            
+            totalPrice: parseFloat(state.totalPrice + (state.productsCart.find(product => product.id === action.payload.id).price))
+
+         }
 
       default:
          return state;

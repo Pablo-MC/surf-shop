@@ -1,6 +1,4 @@
 import React, { useContext } from 'react';
-// import $ from 'jquery';
-
 
 import shopContext from '../../context/shop/shopContext';
 
@@ -12,31 +10,8 @@ const CartList = ({product}) =>  {
    const { deleteProduct, increaseQuantity, decreaseQuantity } = ShopContext;
 
 
-   const { id, title, img, price, total, quantity } = product;
+   const { title, img, price, total, quantity } = product;
    
-
-
-
-   // $(document).ready(function () {
-
-   //    $('.quantity-minus').click(function (e) {
-   //       // e.preventDefault();
-   //       // var value = parseInt($('#quantity').val());
-
-   //       // if (value > 1)
-   //          $('#quantity').val(quantity);
-   //    });
-
-   //    $('.quantity-plus').click(function (e) {
-   //       // e.preventDefault();
-   //       // var value = parseInt($('#quantity').val());
-
-   //       // if (value < total)
-   //          $('#quantity').val(quantity);
-   //    });
-
-   // });
-
 
 
    return (
@@ -55,7 +30,7 @@ const CartList = ({product}) =>  {
             <div className="col-2">         
                <div className="input-group">
                   <span className="input-group-btn">
-                     <button className="btn btn-danger btn-sm quantity-minus" onClick={() => decreaseQuantity(id)}>
+                     <button className="btn btn-danger btn-sm" onClick={() => decreaseQuantity(product)}>
                         <i className="fa fa-minus"></i> 
                      </button>
                   </span>                  
@@ -63,13 +38,12 @@ const CartList = ({product}) =>  {
                   <input 
                      className="form-control form-control-sm text-center" 
                      type="text" 
-                     // id={quantity} 
                      // name={quantity}
-                     defaultValue={quantity}
+                     value={quantity}
                   />
 
                   <span className="input-group-btn">
-                     <button className="btn btn-success btn-sm quantity-plus" onClick={() => increaseQuantity(id)}>
+                     <button className="btn btn-success btn-sm" onClick={() => increaseQuantity(product)}>
                         <i className="fa fa-plus"></i>
                      </button>
                   </span>
@@ -78,11 +52,13 @@ const CartList = ({product}) =>  {
             
 
             <div className="col-2">
-               <p className="text-center">$ {total}</p>
+               <p className="text-center">$ {(total).toFixed(2)}</p>
             </div>
 
             <div className="col-2">
-               <button className="btn btn-primary btn-sm" onClick={() => deleteProduct(id)}><i className="fa fa-trash"></i></button>
+               <button className="btn btn-primary btn-sm" onClick={() => deleteProduct(product)}>
+                  <i className="fa fa-trash"></i>
+               </button>
             </div>
       
          </div>

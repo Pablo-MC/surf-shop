@@ -3,8 +3,10 @@ import React from 'react';
 
 const Footer = () => {
    return (
-      <div className="container mt-5" id="footer">
-         <h2 className="display-3 text-center mb-0">Footer</h2>
+      <div className="container mt-5 mb-0" id="footer">
+         <a className="d-block text-center" href="/">
+            <img src="images/logo.svg" width="80" height="80" alt="logo"/>
+         </a>
       </div>
    )
 }

@@ -45,7 +45,7 @@ const Cart = () => {
                ))}
 
                <div className="container d-flex justify-content-end bg-light my-4 py-2">
-                  <h2 className="m-0">Total: $ {totalPrice}</h2> 
+                  <h2 className="m-0">Total: $ {totalPrice.toFixed(2)}</h2> 
                   <button className="btn btn-md btn-success ml-5 mb-2 py-2 text-uppercase">Checkout<i className="fa fa-arrow-right ml-3"></i></button>       
                </div>
 

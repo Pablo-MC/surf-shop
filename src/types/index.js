@@ -5,6 +5,4 @@ export const INCREASE_QUANTITY = 'INCREASE_QUANTITY';
 export const DECREASE_QUANTITY = 'DECREASE_QUANTITY';
 
 
-
-
-// Los types definen las acciones de lo que va pasando en la aplicacion. Dependiendo de esas acciones podemos ir ejecutando ciertas partes de nuestro código.
+// Los types definen las acciones de lo que va pasando en la aplicación. Dependiendo de esas acciones se irán ejecutando ciertas partes de nuestro código.
