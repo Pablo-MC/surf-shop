@@ -36,7 +36,7 @@ const Navbar = () => {
                         <a className="dropdown-item" href="#fins">Fins</a>
                         <a className="dropdown-item" href="#boards">Boards</a>
                         <a className="dropdown-item" href="#neopreme">Neoprenes</a>
-                        <a className="dropdown-item" href="#accesories">Accesories <i className="fa fa-cubes ml-2"></i></a>
+                        <a className="dropdown-item" href="#accesories">Accesories<i className="fa fa-cubes ml-2"></i></a>
                      </div>
                   </div>
                   {/* End Dropdown Button */}

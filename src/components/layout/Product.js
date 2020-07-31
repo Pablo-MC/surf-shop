@@ -10,73 +10,73 @@ const Product = ({ product }) => {
    const { addProduct } = ShopContext;
    
    
-   const { id, title, price, img, info } = product;
+   const { title, img, price, info } = product;
 
 
-   // Modal Cart Timer (jQuery) 
-   $(document).ready(function () {
-      $('#cartModal').on('shown.bs.modal', function () {
-         var timer = setInterval(function () {
-            $('#cartModal').modal('toggle');
-            clearInterval(timer);
-         }, 700);
-      });
-   });
+   // Modal AddCart       
+   $('#cartModal').on('shown.bs.modal', () => {         
+      var timer = setInterval(() => {             
+         $('#cartModal').modal('toggle');
+         clearInterval(timer);
+      }, 700);
+   });      
    
-
-   // const saberId = () => {
-   //    console.log(id);
-   // }
+   
+   // Modal Product
+   const viewModalProduct = (title, img, info) => {
+      $('#ModalTitle').html(title);
+      $('#ModalImg').attr('src', img);
+      $('#ModalInfo').html(info);
+   }
 
 
    return (
       <>
          <div className="card shadow mb-5">
             <div className="card-body">
-               <p>{id}</p>
-               <p className="lead text-info font-weight-normal">{title}</p>
+               <p className="lead text-info font-weight-normal pt-3">{title}</p>
                <p className="lead font-weight-normal">$ {price}</p>
 
                <img src={img} alt={title}
                   className="w-100"  
                   data-toggle="modal" data-target="#productModal" role="button"
-                  // onClick={() => saberId()}
+                  onClick={() => viewModalProduct(title, img, info)}
                />
                  
                <button
-                  onClick={() => addProduct(product)}
-                  className="btn btn-outline-info mt-4 mb-2"
+                  className="btn btn-outline-info mt-4 mb-3"
                   data-toggle="modal" data-target="#cartModal"
+                  onClick={() => addProduct(product)}
                >Add Cart <i className="fa fa-shopping-cart ml-2"></i>
                </button>
             </div>
          </div>
 
 
-
          {/* Modal Product */}
-         <div className="modal fade style-modal" id="productModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div className="modal fade style-modal" id="productModal" tabIndex="-1" role="dialog" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered">
                <div className="modal-content">
 
                   <div className="modal-header">
-                     <h5 className="modal-title mx-auto" id="exampleModalLabel">{title}</h5>
+                     <h5 className="modal-title mx-auto" id="ModalTitle">Title</h5>
                   </div>
                   <div className="modal-body">
-                     <img src={img} className="w-75" alt={title} />
-                     <p className="lead">{info}</p>
+                     <img className="w-50" src="" alt="" id="ModalImg"/> 
+                     <p className="lead pt-3" id="ModalInfo">Information</p>
                   </div>
                   <div className="modal-footer">
-                     <button type="button" className="btn btn-secondary mx-auto" data-dismiss="modal"><i className="fa fa-undo mr-2"></i>Back to Products</button>
+                     <button className="btn btn-secondary mx-auto" type="button" data-dismiss="modal"><i className="fa fa-undo mr-2"></i>Back to Products</button>
                      {/* <button type="button" className="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#cartModal" onClick={() => addProduct(product)}>Add to Cart</button> */}
                   </div>
+
                </div>
             </div>
          </div>
                
 
-         {/* Modal Cart */}
-         <div className="modal fade" id="cartModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         {/* Modal AddCart */}
+         <div className="modal fade" id="cartModal" tabIndex="-1" role="dialog" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered">
                <div className="modal-content">
                   <div className="card-body text-center py-5">

@@ -16,9 +16,9 @@ const CartList = ({product}) =>  {
 
    return (
       <>
-         <div className="row flex-row border-bottom border-info align-items-baseline text-center py-4 m-0">
+         <div className="row border-bottom border-info align-items-baseline text-center py-4 m-0">
             <div className="col-4">
-               <img src={img} className="w-25 mr-3" alt={title} />
+               <img className="w-25 mx-3" src={img} alt={title} />
                <span>{title}</span>
             </div>
 
