@@ -8,9 +8,10 @@ import shopContext from './shopContext';
 import shopReducer from './shopReducer';
 
 
-import { 
+import {
    ADD_PRODUCT,
    DELETE_PRODUCT,
+   DELETE_ALL_PRODUCT,
    INCREASE_QUANTITY,
    DECREASE_QUANTITY
 } from '../../types';
@@ -22,11 +23,12 @@ const ShopState = (props) => {
    const initialState = {
       products: storeProducts,
       productsCart: [],
-      totalPrice: 0   
+      totalPrice: 0,
+      login: true   
    }
 
 
-   // Creacion del state y el dispatch (useReducer)
+   // CreaciÓn del state y el dispatch (useReducer)
    const [state, dispatch] = useReducer(shopReducer, initialState);
 
 
@@ -45,10 +47,8 @@ const ShopState = (props) => {
             payload: product
          })   
       } 
-
    }               
    
-
    const deleteProduct = (product) => {
 
       product.inCart = false; 
@@ -59,6 +59,14 @@ const ShopState = (props) => {
       })
    }
 
+   const deleteAllProducts = () => {
+      
+      state.productsCart.map(product => product.inCart = false);
+      
+      dispatch({
+         type: DELETE_ALL_PRODUCT
+      })
+   }
 
    const decreaseQuantity = (product) => {
 
@@ -72,7 +80,6 @@ const ShopState = (props) => {
          })
       }
    } 
-
 
    const increaseQuantity = (product) => {
 
@@ -95,10 +102,12 @@ const ShopState = (props) => {
             products: state.products,
             productsCart: state.productsCart,
             totalPrice: state.totalPrice,
+            login: state.login,
             addProduct,
             deleteProduct,
             increaseQuantity,
-            decreaseQuantity
+            decreaseQuantity,
+            deleteAllProducts
 
 
          }}

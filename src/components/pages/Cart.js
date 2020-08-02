@@ -1,19 +1,41 @@
 import React, { useContext } from 'react';
-import NavCart from '../layout/NavCart';
+import $ from 'jquery';
+
+import CartNav from '../layout/CartNav';
 import CartList from '../layout/CartList';
 
 import shopContext from '../../context/shop/shopContext';
 
 
-const Cart = () => {
+const Cart = (props) => {
 
    const ShopContext = useContext(shopContext);
-   const { productsCart, totalPrice } = ShopContext;
+   const { productsCart, totalPrice, deleteAllProducts, login } = ShopContext;
 
+   
+   const isLogin = () => {
+      if (login) {
+         deleteAllProducts();
+         // props.history.push('/');
+      } else {
+         props.history.push('/login');
+      }
+   }
+
+
+   // Modal Checkout (timer)
+   $(document).ready(() => {
+      $('#checkoutModal').on('shown.bs.modal', () => {
+         var timer = setInterval(() => {
+            $('#checkoutModal').modal('toggle');
+            clearInterval(timer);
+         }, 900);
+      });
+   });
 
    return (
       <>
-         <NavCart />   
+         <CartNav />   
 
          {productsCart.length === 0 
          ?  
@@ -46,11 +68,28 @@ const Cart = () => {
 
                <div className="container d-flex justify-content-end bg-light my-4 py-2">
                   <h2 className="m-0">Total: $ {totalPrice.toFixed(2)}</h2> 
-                  <button className="btn btn-md btn-success ml-5 mb-2 py-2 text-uppercase">Checkout<i className="fa fa-arrow-right ml-3"></i></button>       
+                  <button 
+                     className="btn btn-md btn-success ml-5 mb-2 py-2 text-uppercase"
+                     data-toggle="modal" data-target="#checkoutModal"
+                     onClick={() => isLogin()}
+                  >Buy Now<i className="fa fa-arrow-right ml-3"></i></button>       
                </div>
-
             </div>                
          }
+
+
+         {/* Modal Checkout */}
+         <div className="modal fade" id="checkoutModal" tabIndex="-1" role="dialog" aria-hidden="true">
+            <div className="modal-dialog modal-dialog-centered">
+               <div className="modal-content">
+                  <div className="card-body text-center py-5">
+                     <i className="fa fa-smile-o text-success fa-5x"></i>
+                     <h4 className="mt-3">Thanks for your purchase!</h4>
+                  </div>
+               </div>
+            </div>
+         </div>
+
       </>         
    )
 }

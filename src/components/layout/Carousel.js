@@ -4,30 +4,25 @@ import React from 'react';
 const Carousel = () => {
    return (
       <div className="container">
-         <div id="carouselExampleControls" className="carousel slide mt-1" data-ride="carousel">
+         <div className="carousel slide mt-1" id="carouselExampleControls" data-ride="carousel">
             <div className="carousel-inner shadow-lg rounded">
                <div className="carousel-item active">
-                  <img src="images/carousel_1.jpg" className="d-block w-100" alt="Img-1"/>
+                  <img className="d-block w-100" src="images/carousel_1.jpg" alt="Img-1"/>
                   <div className="carousel-caption d-none d-lg-block">
-                     {/* <h5 className="display-1">First slide label</h5> */}
-                     <p className="lead mb-4">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                     <button className="btn btn-outline-light btn-lg text-uppercase mb-5">Shop Now <i className="fa fa-cart-arrow-down ml-2"></i></button>
+                     <p className="lead mb-4 font-weight-normal">- Great Surfing Spots Near Amazing Costa Rica -</p>
                   </div>
                </div>
                <div className="carousel-item">
-                  <img src="images/carousel_2.jpg" className="d-block w-100" alt="Img-2"/>
+                  <img className="d-block w-100" src="images/carousel_2.jpg" alt="Img-2"/>
                   <div className="carousel-caption d-none d-lg-block">
-                     {/* <h5 className="display-1">First slide label</h5> */}
-                     <p className="lead mb-4">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                     <button className="btn btn-outline-light btn-lg text-uppercase mb-5">Shop Now <i className="fa fa-cart-arrow-down ml-2"></i></button>
+                     <p className="lead mb-4 font-weight-normal">- A Once In A Lifetime Look at the World’s Best Waves -</p>
                   </div>
                </div>
                <div className="carousel-item">
-                  <img src="images/carousel_3.jpg" className="d-block w-100" alt="Img-3"/>
+                  <img className="d-block w-100" src="images/carousel_3.jpg" alt="Img-3"/>
                   <div className="carousel-caption d-none d-lg-block">
-                     {/* <h5 className="display-1">First slide label</h5> */}
-                     <p className="lead mb-4">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                     <button className="btn btn-outline-light btn-lg text-uppercase mb-5">Shop Now <i className="fa fa-cart-arrow-down ml-2"></i></button>
+                     <p className="lead mb-4 text-dark font-weight-normal">- Mentawai Islands Offer Some 400 Surfing Spots -</p>
+                     {/* <button className="btn btn-outline-light btn-lg text-uppercase">Shop Now <i className="fa fa-cart-arrow-down ml-2"></i></button> */}
                   </div>
                </div>
             </div>

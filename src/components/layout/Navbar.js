@@ -41,10 +41,10 @@ const Navbar = () => {
                   </div>
                   {/* End Dropdown Button */}
                   <Link to={'/contact'} className="nav-item nav-link px-4">Contact</Link>           
-                  <a className="nav-item nav-link px-4" href="!#"><i className="fa fa-search text-dark"></i></a>
                </div>
                
                <Link to={'/cart'} className="btn btn-outline-info text-uppercase">My Cart<i className="fa fa-cart-arrow-down ml-2"></i></Link>
+               <Link to={'/login'} className="btn btn-info text-uppercase ml-3">Login<i className="fa fa-user-circle ml-2"></i></Link>
 
             </div>
          </nav>

@@ -1,6 +1,7 @@
 import {
    ADD_PRODUCT,
    DELETE_PRODUCT,
+   DELETE_ALL_PRODUCT,
    INCREASE_QUANTITY,
    DECREASE_QUANTITY
 } from '../../types';
@@ -23,6 +24,13 @@ export default (state, action) => {
             
             totalPrice: parseFloat(state.totalPrice - (state.productsCart.find(product => product.id === action.payload.id).total))
          }
+
+      case DELETE_ALL_PRODUCT:
+         return {
+            ...state,
+            productsCart: [],
+            totalPrice: 0
+         }  
 
       case DECREASE_QUANTITY:
          return {
