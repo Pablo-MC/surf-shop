@@ -14,7 +14,7 @@ const ProductsList = () => {
 
 
    return (
-      <div className="container py-5 text-center">
+      <div className="container pt-5 text-center">
          <Title name={'Products'} />
          
          <h2 id="fins" className="mt-5">Fins</h2>

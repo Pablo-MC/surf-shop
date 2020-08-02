@@ -13,20 +13,22 @@ const Product = ({ product }) => {
    const { title, img, price, info } = product;
 
 
-   // Modal AddCart       
-   $('#cartModal').on('shown.bs.modal', () => {         
-      var timer = setInterval(() => {             
-         $('#cartModal').modal('toggle');
-         clearInterval(timer);
-      }, 700);
-   });      
+   // Modal AddCart (timer)
+   $(document).ready(() => {       
+      $('#cartModal').on('shown.bs.modal', () => {         
+         var timer = setInterval(() => {             
+            $('#cartModal').modal('toggle');
+            clearInterval(timer);
+         }, 700);
+      });      
+   });
    
    
-   // Modal Product
-   const viewModalProduct = (title, img, info) => {
-      $('#ModalTitle').html(title);
-      $('#ModalImg').attr('src', img);
-      $('#ModalInfo').html(info);
+   // Modal Product (content)
+   const viewModalProduct = (title, image, info) => {
+      $('#titleProduct').html(title);
+      $('#imageProduct').attr('src', image);
+      $('#infoProduct').html(info);
    }
 
 
@@ -59,11 +61,11 @@ const Product = ({ product }) => {
                <div className="modal-content">
 
                   <div className="modal-header">
-                     <h5 className="modal-title mx-auto" id="ModalTitle">Title</h5>
+                     <h5 className="modal-title mx-auto" id="titleProduct">Title</h5>
                   </div>
                   <div className="modal-body">
-                     <img className="w-50" src="" alt="" id="ModalImg"/> 
-                     <p className="lead pt-3" id="ModalInfo">Information</p>
+                     <img className="w-50" src="" alt="" id="imageProduct"/> 
+                     <p className="lead pt-3" id="infoProduct">Information</p>
                   </div>
                   <div className="modal-footer">
                      <button className="btn btn-secondary mx-auto" type="button" data-dismiss="modal"><i className="fa fa-undo mr-2"></i>Back to Products</button>
