@@ -8,24 +8,27 @@ import Cart from './components/pages/Cart';
 import Contact from './components/pages/Contact';
 import Default from './components/pages/Default';
 
+import AuthSate from './context/auth/AuthState'
 import ShopState from './context/shop/ShopState';
 
 
 function App () {
    return (
       <>
-         <ShopState>
-            <Router>
-               <Switch>
-                  <Route exact path="/" component={Home} />
-                  <Route exact path="/login" component={Login} />
-                  <Route exact path="/register" component={Register} />
-                  <Route exact path="/cart" component={Cart} />
-                  <Route exact path="/contact" component={Contact} />
-                  <Route component={Default} />
-               </Switch>  
-            </Router>
-         </ShopState> 
+         <AuthSate>
+            <ShopState>
+               <Router>
+                  <Switch>
+                     <Route exact path="/" component={Home} />
+                     <Route exact path="/login" component={Login} />
+                     <Route exact path="/register" component={Register} />
+                     <Route exact path="/cart" component={Cart} />
+                     <Route exact path="/contact" component={Contact} />
+                     <Route component={Default} />
+                  </Switch>  
+               </Router>
+            </ShopState>
+         </AuthSate> 
       </>     
    );
 }

@@ -4,24 +4,18 @@ import $ from 'jquery';
 import CartNav from '../layout/CartNav';
 import CartList from '../layout/CartList';
 
+import authContext from '../../context/auth/authContext';
 import shopContext from '../../context/shop/shopContext';
 
 
 const Cart = (props) => {
 
-   const ShopContext = useContext(shopContext);
-   const { productsCart, totalPrice, deleteAllProducts, login } = ShopContext;
-
+   const AuthContext = useContext(authContext);
+   const { login } = AuthContext;
    
-   const isLogin = () => {
-      if (login) {
-         deleteAllProducts();
-         // props.history.push('/');
-      } else {
-         props.history.push('/login');
-      }
-   }
-
+   const ShopContext = useContext(shopContext);
+   const { productsCart, totalPrice, deleteAllProducts } = ShopContext;
+   
 
    // Modal Checkout (timer)
    $(document).ready(() => {
@@ -33,6 +27,7 @@ const Cart = (props) => {
       });
    });
 
+   
    return (
       <>
          <CartNav />   
@@ -68,11 +63,21 @@ const Cart = (props) => {
 
                <div className="container d-flex justify-content-end bg-light my-4 py-2">
                   <h2 className="m-0">Total: $ {totalPrice.toFixed(2)}</h2> 
-                  <button 
-                     className="btn btn-md btn-success ml-5 mb-2 py-2 text-uppercase"
-                     data-toggle="modal" data-target="#checkoutModal"
-                     onClick={() => isLogin()}
-                  >Buy Now<i className="fa fa-arrow-right ml-3"></i></button>       
+                  
+                  {login
+                  ?
+                     <button 
+                        className="btn btn-md btn-success ml-5 mb-2 py-2 text-uppercase"
+                        data-toggle="modal" data-target="#checkoutModal"
+                        onClick={deleteAllProducts}
+                     >Buy Now<i className="fa fa-arrow-right ml-3"></i></button>       
+                  :
+                     <button
+                        className="btn btn-md btn-success ml-5 mb-2 py-2 text-uppercase"
+                        onClick={() => props.history.push('/login')}
+                     >Buy Now<i className="fa fa-arrow-right ml-3"></i></button>       
+                  }
+                                  
                </div>
             </div>                
          }

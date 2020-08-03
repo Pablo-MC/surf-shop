@@ -1,21 +1,22 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-// import shopContext from '../../context/shop/shopContext';
+import authContext from '../../context/auth/authContext';
 
 
 const Login = (props) => {
    
-   // const ShopContext = useContext(shopContext);
-   // const { login } = ShopContext;
+   const AuthContext = useContext(authContext);
+   const { logInUser } = AuthContext;
 
 
+   // User State
    const [ user, setUser ] = useState({
       email: '',
       password: ''
    });
 
-   // Destructuring user
+   // Destructuring user state
    const { email, password } = user;
 
    const handleChange = e => {
@@ -26,17 +27,17 @@ const Login = (props) => {
    const handleSubmit = e => {
       e.preventDefault();
 
-      // Validar que no haya campos vacios
+      // Check that there are no empty inputs
       // if (email.trim() === '' || password.trim() === '') {
-      //    mostrarAlerta('Todos los campos son obligatorios', 'alerta-error');
+      //    alert('All inputs are required!');
       //    return;
       // }
 
       
-      // Cambio el state de Login
-      
+      // Give the user login and change the LogIn button to Sign off button
+      logInUser();
 
-      // Redirijo al usuario a la pagina de Home.
+      // Redirect the user to the Home page.
       props.history.push('/');
    }   
 
@@ -50,6 +51,7 @@ const Login = (props) => {
                onSubmit={handleSubmit}
             >
                <h2 className="text-center mb-4 text-white">Login</h2>
+               
                {/* Email */}
                <div className="input-group">
                   <div className="input-group-prepend"><span className="input-group-text"><i className="fa fa-envelope"></i></span></div>
@@ -62,6 +64,7 @@ const Login = (props) => {
                      onChange={handleChange}
                      />
                </div>
+               
                {/* Password */}
                <div className="input-group my-3">
                   <div className="input-group-prepend"><span className="input-group-text"><i className="fa fa-unlock-alt px-1"></i></span></div>
@@ -74,6 +77,7 @@ const Login = (props) => {
                      onChange={handleChange}
                      />
                </div>
+               
                {/* Remember me */}
                <div className="form-check mb-3 text-center">
                   <input className="form-check-input" type="checkbox" id="autoSizingCheck" />

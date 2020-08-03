@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import $ from 'jquery';
 
+import authContext from '../../context/auth/authContext'
+import shopContext from '../../context/shop/shopContext'
+
 
 const Navbar = () => {
+
+   const AuthContext = useContext(authContext);
+   const { login, signOffUser } = AuthContext;
+   
+   const ShopContext = useContext(shopContext);
+   const { deleteAllProducts } = ShopContext;
+
+
+   const signOff = () => {
+      signOffUser();
+      deleteAllProducts();
+   }
+
 
    // SMOOTH SCROLLING (jQuery)
    $(document).ready(function () {
@@ -32,11 +48,12 @@ const Navbar = () => {
                   {/* Begin Dropdown Button */}
                   <div className="dropdown">
                      <a className="nav-item nav-link dropdown-toggle px-4" href="!#" id="dropdownMenuLink" data-toggle="dropdown">Shop</a>
-                     <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                     <div className="dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
                         <a className="dropdown-item" href="#fins">Fins</a>
                         <a className="dropdown-item" href="#boards">Boards</a>
                         <a className="dropdown-item" href="#neopreme">Neoprenes</a>
-                        <a className="dropdown-item" href="#accesories">Accesories<i className="fa fa-cubes ml-2"></i></a>
+                        <div className="dropdown-divider"></div>
+                        <a className="dropdown-item" href="#accesories">Accesories</a>
                      </div>
                   </div>
                   {/* End Dropdown Button */}
@@ -44,8 +61,14 @@ const Navbar = () => {
                </div>
                
                <Link to={'/cart'} className="btn btn-outline-info text-uppercase">My Cart<i className="fa fa-cart-arrow-down ml-2"></i></Link>
-               <Link to={'/login'} className="btn btn-info text-uppercase ml-3">Login<i className="fa fa-user-circle ml-2"></i></Link>
-
+               
+               {login
+               ?
+                  <Link to={'/'} onClick={() => signOff()} className="btn btn-info text-uppercase ml-3">Sign off<i className="fa fa-sign-out ml-2"></i></Link>
+               :     
+                  <Link to={'/login'} className="btn btn-info text-uppercase ml-3">Login<i className="fa fa-user-circle ml-2"></i></Link>
+               }
+            
             </div>
          </nav>
       </div>

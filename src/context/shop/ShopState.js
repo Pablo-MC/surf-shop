@@ -3,11 +3,11 @@ import React, { useReducer } from 'react';
 import { storeProducts } from '../../data';
 
 
-// Importo Context y Reducer
+// Import Context and Reducer
 import shopContext from './shopContext';
 import shopReducer from './shopReducer';
 
-
+// Import Types
 import {
    ADD_PRODUCT,
    DELETE_PRODUCT,
@@ -17,23 +17,23 @@ import {
 } from '../../types';
 
 
-// ShopState es el State inicial de toda la administración del Shop.
+
 const ShopState = (props) => {
 
+   // Initial State of Shop
    const initialState = {
       products: storeProducts,
       productsCart: [],
-      totalPrice: 0,
-      login: true   
+      totalPrice: 0  
    }
 
 
-   // CreaciÓn del state y el dispatch (useReducer)
+   // Create the state and dispatch (useReducer)
    const [state, dispatch] = useReducer(shopReducer, initialState);
 
 
    
-   // Funciones
+   // Functions
 
    const addProduct = (product) => { 
       
@@ -60,9 +60,7 @@ const ShopState = (props) => {
    }
 
    const deleteAllProducts = () => {
-      
-      state.productsCart.map(product => product.inCart = false);
-      
+            
       dispatch({
          type: DELETE_ALL_PRODUCT
       })
@@ -102,13 +100,11 @@ const ShopState = (props) => {
             products: state.products,
             productsCart: state.productsCart,
             totalPrice: state.totalPrice,
-            login: state.login,
             addProduct,
             deleteProduct,
             increaseQuantity,
             decreaseQuantity,
             deleteAllProducts
-
 
          }}
       >
