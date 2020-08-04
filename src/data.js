@@ -145,17 +145,3 @@ export const storeProducts = [
       total: 5.99
    }
 ]
-
-
-// export const detailProduct = {
-//    id: 1,
-//    title: "Name",
-//    img: "images/product.png",
-//    price: 0,
-//    category: "none",
-//    info:
-//       "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle.",
-//    inCart: false,
-//    quantity: 1,
-//    total: 0
-// }
