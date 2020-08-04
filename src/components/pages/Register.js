@@ -113,7 +113,7 @@ const Register = (props) => {
                {/* Terms and Conditions */}
                <div className="form-check mb-3 text-center">
                   <input className="form-check-input" type="checkbox" id="autoSizingCheck" />
-                  <label className="form-check-label text-white" for="autoSizingCheck">I agree to the <a className="text-warning" href="!#">Terms and Conditions</a></label>
+                  <label className="form-check-label text-white" htmlFor="autoSizingCheck">I agree to the <a className="text-warning" href="!#">Terms and Conditions</a></label>
                </div>
                
                <button className="btn btn-primary btn-block rounded-pill text-uppercase mb-3">Register</button>

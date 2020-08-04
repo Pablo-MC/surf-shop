@@ -2,7 +2,7 @@ export const storeProducts = [
    
    {
       id: 1,
-      title: "Futures Alpha Freestone",
+      title: "Futures Alpha",
       img: "images/fins_1.jpg",
       price: 110.99,
       category: "fins",
@@ -26,7 +26,7 @@ export const storeProducts = [
    },
    {
       id: 3,
-      title: "FCS Carver Accelerator",
+      title: "FCS Carver Large",
       img: "images/fins_3.jpg",
       price: 84.99,
       category: "fins",
@@ -98,7 +98,7 @@ export const storeProducts = [
    },
    {
       id: 9,
-      title: "Billabong Furnace Absolute",
+      title: "Billabong Furnace",
       img: "images/neoprene_3.jpg",
       price: 167.99,
       category: "neoprene",

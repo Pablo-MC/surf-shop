@@ -81,7 +81,7 @@ const Login = (props) => {
                {/* Remember me */}
                <div className="form-check mb-3 text-center">
                   <input className="form-check-input" type="checkbox" id="autoSizingCheck" />
-                  <label className="form-check-label text-white" for="autoSizingCheck">Remember me</label>
+                  <label className="form-check-label text-white" htmlFor="autoSizingCheck">Remember me</label>
                </div>
          
                <button className="btn btn-primary btn-block rounded-pill text-uppercase mb-3" type="submit">Login</button>

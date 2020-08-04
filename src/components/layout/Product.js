@@ -35,12 +35,13 @@ const Product = ({ product }) => {
    return (
       <>
          <div className="card shadow mb-5">
-            <div className="card-body">
+            <div className="card-body w-75 mx-auto">
+               {/* <div className="card-body"> < -- Vista original */}
                <p className="lead text-info font-weight-normal pt-3">{title}</p>
                <p className="lead font-weight-normal">$ {price}</p>
 
                <img src={img} alt={title}
-                  className="w-100"  
+                  className="w-75"  
                   data-toggle="modal" data-target="#productModal" role="button"
                   onClick={() => viewModalProduct(title, img, info)}
                />
@@ -64,12 +65,11 @@ const Product = ({ product }) => {
                      <h5 className="modal-title mx-auto" id="titleProduct">Title</h5>
                   </div>
                   <div className="modal-body">
-                     <img className="w-50" src="" alt="" id="imageProduct"/> 
-                     <p className="lead pt-3" id="infoProduct">Information</p>
+                     <img className="w-75" src="" alt="" id="imageProduct"/> 
+                     <p className="pt-3" id="infoProduct">Information</p>
                   </div>
                   <div className="modal-footer">
                      <button className="btn btn-secondary mx-auto" type="button" data-dismiss="modal"><i className="fa fa-undo mr-2"></i>Back to Products</button>
-                     {/* <button type="button" className="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#cartModal" onClick={() => addProduct(product)}>Add to Cart</button> */}
                   </div>
 
                </div>

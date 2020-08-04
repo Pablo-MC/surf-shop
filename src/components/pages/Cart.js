@@ -61,19 +61,19 @@ const Cart = (props) => {
                   />
                ))}
 
-               <div className="container d-flex justify-content-end bg-light my-4 py-2">
+               <div className="container d-flex justify-content-end bg-muted mt-4 pt-3 pb-5">
                   <h2 className="m-0">Total: $ {totalPrice.toFixed(2)}</h2> 
                   
                   {login
                   ?
                      <button 
-                        className="btn btn-md btn-success ml-5 mb-2 py-2 text-uppercase"
+                        className="btn btn-md btn-success ml-5 py-2 text-uppercase"
                         data-toggle="modal" data-target="#checkoutModal"
                         onClick={deleteAllProducts}
                      >Buy Now<i className="fa fa-arrow-right ml-3"></i></button>       
                   :
                      <button
-                        className="btn btn-md btn-success ml-5 mb-2 py-2 text-uppercase"
+                        className="btn btn-md btn-success ml-5 py-2 text-uppercase"
                         onClick={() => props.history.push('/login')}
                      >Buy Now<i className="fa fa-arrow-right ml-3"></i></button>       
                   }

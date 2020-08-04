@@ -13,12 +13,11 @@ const CartList = ({product}) =>  {
    const { title, img, price, total, quantity } = product;
    
 
-
    return (
       <>
          <div className="row border-bottom border-info align-items-baseline text-center py-4 m-0">
             <div className="col-4">
-               <img className="w-25 mx-3" src={img} alt={title} />
+               <img className="w-25 rounded mx-3" src={img} alt={title} />
                <span>{title}</span>
             </div>
 
@@ -26,7 +25,6 @@ const CartList = ({product}) =>  {
                <p>$ {price}</p>   
             </div>
          
-
             <div className="col-2">         
                <div className="input-group">
                   <span className="input-group-btn">
@@ -38,7 +36,6 @@ const CartList = ({product}) =>  {
                   <input 
                      className="form-control form-control-sm text-center" 
                      type="text" 
-                     // name={quantity}
                      value={quantity}
                   />
 
@@ -50,7 +47,6 @@ const CartList = ({product}) =>  {
                </div>
             </div>               
             
-
             <div className="col-2">
                <p className="text-center">$ {(total).toFixed(2)}</p>
             </div>
@@ -62,7 +58,6 @@ const CartList = ({product}) =>  {
             </div>
       
          </div>
-
       </>
    )
 }
