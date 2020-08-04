@@ -1,11 +1,17 @@
-// #root { background:#eee; }
+#root { background:#eee; }
 
-#login {
+#login, #register {
    background-image: url('https://images.unsplash.com/photo-1494879540385-bc170b0878a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'); 
    background-size: cover;
    background-position: top;
-   min-height: 100vh;
-   
+   min-height: 100vh;  
+}
+
+#about {
+   background-image: linear-gradient(rgba(3, 10, 18, .65), rgba(1, 8 , 16, .60)), url('https://images.pexels.com/photos/1054665/pexels-photo-1054665.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'); 
+   background-size: cover;
+   background-position: bottom;
+   color: white;
 }
 
 #contact {
@@ -16,14 +22,12 @@
 
    form {
       width: 65%;
-   }
-   
+   }   
 }
 
-#about { background:#eee; }
-
-#footer { background: #273443; }
+#footer {  background:#eee; }
 
 .style-modal { background-color: rgba(0,0,0,0.7); }
 
-.style-navbar { margin-left: 215px; }
+
+

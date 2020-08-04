@@ -28,7 +28,6 @@ export default (state, action) => {
       case DELETE_ALL_PRODUCT:
          return {
             ...state,
-            productsCart: state.productsCart.map(product => product.inCart = false),
             productsCart: [],
             totalPrice: 0
          }  

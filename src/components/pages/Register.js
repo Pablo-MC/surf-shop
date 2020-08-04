@@ -16,8 +16,7 @@ const Register = (props) => {
       password: '',
       passwordConfirm: ''
    });
-
-   
+ 
    // Destructuring newUser State
    const { name, email, password, passwordConfirm } = newUser;
 
@@ -49,11 +48,9 @@ const Register = (props) => {
    }
 
 
-
-
    return (
       <>
-         <div className="container-fluid" id="login">
+         <div className="container-fluid" id="register">
             <h2 className="display-4 text-center text-uppercase font-weight-bold border-bottom text-light mx-auto w-75 py-2">Surf Shop</h2>
             <form 
                className="col-sm-7 col-md-6 col-lg-5 col-xl-3 w-100 mx-auto mt-5"

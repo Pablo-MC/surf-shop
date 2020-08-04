@@ -11,10 +11,9 @@ const CartNav = () => {
                <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-               <div className="navbar-nav text-uppercase m-auto lead py-0">
-                  <Link to={'/'} className="nav-item nav-link text-danger px-4">Home</Link>
-                  <a className="nav-item nav-link px-4" href="!#">FAQ</a>
-                  <Link to={'/contact'} className="nav-item nav-link px-4">Contact</Link>           
+               <div className="navbar-nav text-uppercase m-auto py-3">
+                  <Link to={'/'} className="btn btn-danger text-uppercase text-white px-3">Home<i class="fa fa-home ml-2"></i></Link>
+                  <Link to={'/contact'} className="btn btn-success text-uppercase text-white ml-4">Contact<i class="fa fa-telegram ml-2"></i></Link>
                </div>
             </div>
          </nav>

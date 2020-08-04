@@ -60,6 +60,8 @@ const ShopState = (props) => {
    }
 
    const deleteAllProducts = () => {
+
+      state.productsCart.map(product => product.inCart = false);
             
       dispatch({
          type: DELETE_ALL_PRODUCT

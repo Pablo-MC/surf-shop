@@ -38,16 +38,17 @@ const Navbar = () => {
       <div className="container">
          <h2 className="display-4 text-center text-uppercase font-weight-bold border-bottom mx-auto w-75 py-2">Surf Shop</h2>
          <nav className="navbar navbar-expand-lg navbar-light">
-            <button className="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <button className="navbar-toggler mx-auto mb-3" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse style-navbar mb-2" id="navbarNavAltMarkup">
-               <div className="navbar-nav text-uppercase m-auto lead py-0">
-                  <Link to={'/'} className="nav-item nav-link text-danger px-4">Home</Link>           
-                  <a className="nav-item nav-link px-4" href="#about">About</a>  
+            <div className="collapse navbar-collapse style-navbar" id="navbarNavAltMarkup">
+               <a className="navbar-brand d-none d-lg-block" href="/"><img src={process.env.PUBLIC_URL + 'images/logo_navbar.png'} width="100" alt="logo" loading="lazy" /></a>
+               <div className="navbar-nav text-uppercase mx-auto lead py-0 pl-5">
+                  <Link to={'/'} className="nav-item nav-link text-danger d-none d-lg-block px-4 ">Home</Link>           
+                  <a className="nav-item nav-link pl-4 d-none d-lg-block" href="#about">About</a>  
                   {/* Begin Dropdown Button */}
-                  <div className="dropdown">
-                     <a className="nav-item nav-link dropdown-toggle px-4" href="!#" id="dropdownMenuLink" data-toggle="dropdown">Shop</a>
+                  <div className="dropdown px-4 d-none d-lg-block">
+                     <a className="nav-item nav-link dropdown-toggle" href="!#" id="dropdownMenuLink" data-toggle="dropdown">Shop</a>
                      <div className="dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
                         <a className="dropdown-item" href="#fins">Fins</a>
                         <a className="dropdown-item" href="#boards">Boards</a>
@@ -57,9 +58,9 @@ const Navbar = () => {
                      </div>
                   </div>
                   {/* End Dropdown Button */}
-                  <Link to={'/contact'} className="nav-item nav-link px-4">Contact</Link>           
+                  <Link to={'/contact'} className="nav-item nav-link d-none d-lg-block pl-3">Contact</Link>           
                </div>
-               
+               <div className="text-center">
                <Link to={'/cart'} className="btn btn-outline-info text-uppercase">My Cart<i className="fa fa-cart-arrow-down ml-2"></i></Link>
                
                {login
@@ -68,6 +69,7 @@ const Navbar = () => {
                :     
                   <Link to={'/login'} className="btn btn-info text-uppercase ml-3">Login<i className="fa fa-user-circle ml-2"></i></Link>
                }
+               </div> 
             
             </div>
          </nav>
