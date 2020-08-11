@@ -18,7 +18,7 @@ const CartList = ({product}) =>  {
          <div className="row border-bottom border-info text-center align-items-baseline py-4 m-0">
             <div className="col-4 text-justify">
                <img className="w-25 rounded ml-5" src={img} alt={title} />
-               <span className="d-none d-lg-inline ml-2">{title}</span>
+               <span className="d-none d-lg-inline ml-3">{title}</span>
             </div>
 
             <div className="col-2 d-none d-lg-block">
@@ -47,7 +47,7 @@ const CartList = ({product}) =>  {
                </div>
             </div>               
             
-            <div className="col-3 col-sm-3 col-md-3 col-lg-2 col-xl-2">
+            <div className="col-4 col-sm-3 col-md-3 col-lg-2 col-xl-2">
                <p className="text-center">$ {(total).toFixed(2)}</p>
             </div>
 

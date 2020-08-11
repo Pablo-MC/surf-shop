@@ -21,8 +21,7 @@ const Carousel = () => {
                <div className="carousel-item">
                   <img className="d-block w-100" src="images/carousel_3.jpg" alt="Img-3"/>
                   <div className="carousel-caption d-none d-lg-block">
-                     <p className="lead mb-4 text-dark font-weight-normal">- Mentawai Islands Offer Some 400 Surfing Spots -</p>
-                     {/* <button className="btn btn-outline-light btn-lg text-uppercase">Shop Now <i className="fa fa-cart-arrow-down ml-2"></i></button> */}
+                     <p className="lead mb-4 text-dark font-weight-bolder">- Mentawai Islands Offer Some 400 Surfing Spots -</p>
                   </div>
                </div>
             </div>
