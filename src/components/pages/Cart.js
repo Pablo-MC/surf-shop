@@ -43,7 +43,7 @@ const Cart = (props) => {
             <div className="container"> 
          
                <table className="table table-info mt-3 text-center">
-                  <thead>
+                  <thead className="d-none d-lg-block">
                      <tr className="row m-0">
                         <th className="col-4">Product</th>
                         <th className="col-2">Price</th>
