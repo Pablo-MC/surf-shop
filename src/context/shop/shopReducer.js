@@ -20,9 +20,9 @@ export default (state, action) => {
       case DELETE_PRODUCT:
          return {
             ...state,
-            productsCart: state.productsCart.filter(product => product.id !== action.payload.id),
+            productsCart: state.productsCart.filter(product => product.id !== action.payload.id)     
             
-            totalPrice: parseFloat(state.totalPrice - (state.productsCart.find(product => product.id === action.payload.id).total))
+            // totalPrice: parseFloat(state.totalPrice - (state.productsCart.find(product => product.id === action.payload.id).total))
          }
 
       case DELETE_ALL_PRODUCT:
@@ -38,7 +38,6 @@ export default (state, action) => {
             productsCart: state.productsCart.map(product => product.id === action.payload.id ? action.payload : product),
 
             totalPrice: parseFloat(state.totalPrice - (state.productsCart.find(product => product.id === action.payload.id).price))
-
          }   
 
       case INCREASE_QUANTITY:
@@ -47,7 +46,6 @@ export default (state, action) => {
             productsCart: state.productsCart.map(product => product.id === action.payload.id ? action.payload : product),
             
             totalPrice: parseFloat(state.totalPrice + (state.productsCart.find(product => product.id === action.payload.id).price))
-
          }
 
       default:

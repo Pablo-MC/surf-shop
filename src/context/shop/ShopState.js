@@ -1,7 +1,5 @@
 import React, { useReducer } from 'react';
-
 import { storeProducts } from '../../data';
-
 
 // Import Context and Reducer
 import shopContext from './shopContext';
@@ -32,7 +30,6 @@ const ShopState = (props) => {
    const [state, dispatch] = useReducer(shopReducer, initialState);
 
 
-   
    // Functions
 
    const addProduct = (product) => { 
@@ -51,17 +48,21 @@ const ShopState = (props) => {
    
    const deleteProduct = (product) => {
 
-      product.inCart = false; 
+      state.totalPrice -= product.total;
 
       dispatch({
          type: DELETE_PRODUCT,
          payload: product
       })
+      
+      product.inCart = false;
+      product.quantity = 1; 
+      product.total = product.price;
    }
 
    const deleteAllProducts = () => {
 
-      state.productsCart.map(product => product.inCart = false);
+      state.productsCart.map(product => deleteProduct(product));
             
       dispatch({
          type: DELETE_ALL_PRODUCT

@@ -36,7 +36,6 @@ const Product = ({ product }) => {
       <>
          <div className="card shadow mb-5">
             <div className="card-body w-75 mx-auto">
-               {/* <div className="card-body"> < -- Vista original */}
                <p className="lead text-info font-weight-normal pt-3">{title}</p>
                <p className="lead font-weight-normal">$ {price}</p>
 
