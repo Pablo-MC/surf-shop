@@ -38,7 +38,6 @@ export default (state, action) => {
             productsCart: state.productsCart.map(product => product.id === action.payload.id ? action.payload : product),
 
             totalPrice: parseFloat(state.totalPrice - (state.productsCart.find(product => product.id === action.payload.id).price))
-
          }   
 
       case INCREASE_QUANTITY:
@@ -47,7 +46,6 @@ export default (state, action) => {
             productsCart: state.productsCart.map(product => product.id === action.payload.id ? action.payload : product),
             
             totalPrice: parseFloat(state.totalPrice + (state.productsCart.find(product => product.id === action.payload.id).price))
-
          }
 
       default:
