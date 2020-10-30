@@ -1,4 +1,4 @@
-# Surf Shop :surfer:
+# Surf Shop :surfer: - _(Front-end)_ 
 
 ## Acerca del Proyecto
 
